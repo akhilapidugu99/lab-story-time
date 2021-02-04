@@ -3,15 +3,36 @@
 //Debug the type of data provided
 //Return the types concatenated in a single variable
 
+function moreAboutHome(address, distanceFromTown, hasNeighbours) {
+    return (typeof (address) + typeof (distanceFromTown) + typeof (hasNeighbours));
+}
+
 //Progression 2:
 //Check if the data given is of the right type
 //parents = String, noOfSiblings = Number, isNuclearFamily = Boolean
+
+function moreAboutKaren(parents, noOfSiblings, isNuclearFamily) {
+    if (typeof (parents) == 'string' && typeof (noOfSiblings) == 'number' && typeof (isNuclearFamily) == 'boolean') {
+        return true;
+
+    } else {
+        return false;
+    }
+}
 
 //Progression 3:
 //Lily is suspicious about Karen's new friend
 //Karen tells her friend's age and even writes it down
 //Check which one those is not a number (NaN) and return that value
 
+function doesFriendExist(ageInText, ageInNumber) {
+    if(ageInText == "NaN")
+    return ageInText;
+    else if(ageInNumber == "NaN")
+    return ageInNumber;
+    else
+    return NaN;
+}
 //Progression 4:
 //Lily gave Karen x sweets
 //Karen ate y sweets herself
@@ -19,10 +40,34 @@
 //Her friend divided the remaining sweets into 2 parts for each
 //How many sweets did her friend get to eat?
 
+function sweetTooth(totalNoOfSweets, sweetsConsumedByKaren, sweetsConsumedInNMeters, metersToTravel) {
+    totalNoOfSweets = totalNoOfSweets - sweetsConsumedByKaren;
+    var res = metersToTravel * sweetsConsumedInNMeters;
+    if(res <= totalNoOfSweets) {
+    totalNoOfSweets -= res;
+    return totalNoOfSweets / 2;
+    }
+    else
+    return "No sweets for Karen's friend";
+}
+
 //Progression 5:
 //As Lily moves closer, it gets colder. She checks the temperature on her mobile
 //It only shows in fahrenheit. Convert the data to celsius and return it.
 
+function convertToCelsius(fahrenheit) {
+    let a = typeof fahrenheit;
+    if(a == "undefined")
+    return "Technical Error!";
+    else if(a == "object")
+    return "Technical Error!";
+    else if(a == "string")
+    return "Technical Error!";
+    else {
+       var c = (fahrenheit - 32) / 1.8;
+       return c;
+    }
+}
 //Progression 6:
 //Lily can now do multiple things to deal with this
 //1. Take her daughter to a doctor
@@ -31,6 +76,30 @@
 //4. Lock her daughter in her room
 //Given a value, return which of these above actions Lily would take
 
+function aDifficultChoice(choice) {
+    switch (choice) {
+        case 1:
+            return ("Take her daughter to a doctor")
+            break;
+        case 2:
+            return ("Talk to her husband about it")
+            break;
+        case 3:
+            return ("Counsel her daughter herself")
+            break;
+        case 4:
+            return ("Refused to do anything for Karen")
+            break;
+        case "I give up":
+            return ("Refused to do anything for Karen")
+            break;
+        case -1:
+            return ("Break down and give up all hope")
+            break;
+        default:
+            return ("Wasn't able to decide")
+    }
+}
 //Progression 7:
 //Lily realized that she'd hurt her daughter
 //All she wants now is for her to stop crying
@@ -39,3 +108,8 @@
 //Take all of Lily's strategies and concatenate them to a single var
 //Seperate the strategies by a single space
 //Return the length of the complete strategy
+
+function consoleKaren(strategies) {
+    var value = strategies.split("");
+    return value.length;
+}
