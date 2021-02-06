@@ -110,6 +110,6 @@ function aDifficultChoice(choice) {
 //Return the length of the complete strategy
 
 function consoleKaren(strategies) {
-    var value = strategies.split("");
+    var value = strategies.join("");
     return value.length;
 }
